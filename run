@@ -1,0 +1,6 @@
+docker run --name kinesis-agent \
+-e AWS_ACCESS_KEY_ID=<ID> \
+-e AWS_SECRET_ACCESS_KEY=<KEY> \
+-e KINESIS_STREAM=<STREAM NAME> \
+-v <local data dir>:<container data dir> \
+-d shukla2009/kinesis-agent

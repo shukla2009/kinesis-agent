@@ -5,8 +5,8 @@ ENV CLOUDWATCH_EMIT_METRICS=false \
     KINESIS_FILE_PATTERN="/wootag/dc/event*.json" \
     KINESIS_STREAM=stream \
     KINESIS_PARTITION_KEY_OPTION=RANDOM \
-    LOG_LEVEL=info
+    LOG_LEVEL=INFO
 
 COPY config.sh config.sh
-
+RUN chmod +x config.sh
 CMD ./config.sh && /usr/bin/start-aws-kinesis-agent -L $LOG_LEVEL -l /dev/stdout
